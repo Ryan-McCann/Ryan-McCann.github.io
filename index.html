@@ -1,16 +1,134 @@
----
-layout: default
-title: Portfolio
----
 <!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-  <h1>About Me</h1>
-  <span>Hello, my name is Ryan McCann. I'll be graduating from Saint Xavier University in May 2026 with a Bachelor's in Computer Science. Many of my projects began as ideas that I wanted to explore or personal projects to fit my needs, which motivates me to see them through to completion. I enjoy working on a variety of projects, ranging from software development to electronics design and 3D CAD. I especially like working on things that require me to learn new skills, solve interesting problems, and develop thoughtful and practical solutions.</span>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio | Ryan McCann</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <header class="bg-primary text-white d-flex justify-content-between align-items-center px-3 py-2 shadow">
+      <div>
+        <div class="fw-bold fs-3">Ryan McCann</div>
+        <div class="fs-5 opacity-75">Software Engineer</div>
+      </div>
 
-  <h1 style="margin-top: 40px;">Projects</h1>
-  <span>Some of the projects I've worked on include an encoder for arcade controls to USB, a home inventory system for tracking current stock of groceries, an N64 controller to PC interface using a Pi Pico, and a few game prototypes using different libraries and engines.</span>
-</body>
+      <div class="d-flex gap-2">
+        <a class="btn btn-light btn-lg" href="https://www.github.com/Ryan-McCann"><i class="bi bi-github"></i> GitHub</a>
+        <a class="btn btn-light btn-lg" href="resume.pdf">Resume</a>
+        <a class="btn btn-outline-light btn-lg" href="mailto:mccann.ryan.92@gmail.com">Contact</a>
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3 col-md-2 min-vh-100 h-100 border-end position-sticky top-0" style="background-color: rgba(13, 110, 253, 0.08);">
+          <nav class="mt-3">
+            <a class="btn btn-outline-light w-100 border-0 text-dark" href="#about">About Me</a>
+            <a class="btn btn-outline-light w-100 border-0 text-dark" href="#pico-joybus">Pico-Joybus</a>
+            <a class="btn btn-outline-light w-100 border-0 text-dark" href="#home-inventory-server">Home Inventory Server</a>
+            <a class="btn btn-outline-light w-100 border-0 text-dark" href="#home-inventory-client">Home Inventory Client</a>
+            <a class="btn btn-outline-light w-100 border-0 text-dark" href="#usb-arcade">Arcade USB Encoder</a>
+            <a class="btn btn-outline-light w-100 border-0 text-dark" href="#techx">TechX</a>
+          </nav>
+        </div>
+        <div class="col-9 overflow-auto mt-3 ms-3" style="padding-bottom: 75vh;">
+          <div class="container mx-auto fs-5">
+            <section id="about" class="mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">About Me</h5>
+                  <p class="card-text">I'm a Computer Science student graduating from Saint Xavier University in May 2026. I've worked on a range of projects across frontend, backend, mobile, and embedded systems. </p>
+                  <p class="card-text">
+                    My work is largely driven by exploring new or interesting ideas through my personal projects and building practical solutions using a variety of tools and technologies. In addition to software, 
+                    I also enjoy working directly with hardware through PCB design software and 3D CAD.
+                  </p>
+                </div>
+              </div>              
+            </section>
+
+            <section id="pico-joybus" class="mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Pico-Joybus</h5>
+                  <a class="btn btn-outline-primary btn-sm" href="https://github.com/Ryan-McCann/pico-joybus"><i class="bi bi-github"></i> Repo</a>
+                  <p class="card-text text-muted">A project to communicate with N64 and Gamecube controllers using the Raspberry Pi Pico.</p>
+                  <ul>
+                    <li>Implemented as a USB HID device.</li>
+                    <li>Implemented Joybus protocol using a PIO assembly program to contorl a single-wire open-drain interface.</li>
+                    <li>Debugged signal timing and communcation via a logic analyzer.</li>
+                  </ul>
+                  <p class="small text-muted">C • PIO ASM</p>
+                </div>
+              </div>
+            </section>
+
+            <section id="home-inventory-server" class="mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Home Inventory Server</h5>
+                  <a class="btn btn-outline-primary btn-sm" href="https://github.com/Ryan-McCann/inventory-management"><i class="bi bi-github"></i> Repo</a>
+                  <p class="card-text text-muted">Backend API for storing, retrieving, and managing home grocery inventory.</p>
+                  <ul>
+                    <li>Designed as a RESTful API service</li>
+                    <li>Implemented server-side routing and requests in PHP</li>
+                    <li>Created a database in MySQL for storing and retrieving inventory info</li>
+                  </ul>
+                  <p class="small text-muted">PHP • MySQL</p>
+                </div>
+              </div>
+            </section>
+
+            <section id="home-inventory-client" class="mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Home Inventory Client</h5>
+                  <a class="btn btn-outline-primary btn-sm" href="https://github.com/Ryan-McCann/inventory-management-client"><i class="bi bi-github"></i> Repo</a>
+                  <p class="card-text text-muted">Frontend Android client for allowing users to manage their home grocery inventory.</p>
+                  <ul>
+                    <li>Implemented barcode scanning and generation for both products and inventory locations using camera service</li>
+                    <li>Communicates requests with server to update and retrieve current inventory</li>
+                  </ul>
+                  <p class="small text-muted">Kotlin</p>
+                </div>
+              </div>
+            </section>
+
+            <section id="usb-arcade" class="mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Arcade USB Encoder</h5>
+                  <a class="btn btn-outline-primary btn-sm" href="https://github.com/Ryan-McCann/arcade_usb_encoder"><i class="bi bi-github"></i> Repo</a>
+                  <p class="card-text text-muted">Firmware written for a custom-designed PCB using NXP's LPC11u24 to manage arcade controls as a USB HID device.</p>
+                  <ul>
+                    <li>Implemented as a USB HID device.</li>
+                    <li>Reads physical state of up to 18 buttons, one trackball, and one spinner, and updates HID state</li>
+                  </ul>
+                  <p class="small text-muted">C</p>
+                </div>
+              </div>
+            </section>
+
+            <section id="techx" class="mb-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">TechX</h5>
+                  <a class="btn btn-outline-primary btn-sm" href="https://github.com/evelyn-mart-456/TechX"><i class="bi bi-github"></i> Repo</a>
+                  <p class="card-text text-muted">Full stack app to allow users to discover and discuss various interesting and new tech developments.</p>
+                  <ul>
+                    <li>Frontend written in HTML with Bootstrap and CSS styling.</li>
+                    <li>Backend written in NodeJS</li>
+                    <li>Database setup using MySQL</li>
+                  </ul>
+                  <p class="small text-muted">HTML • JS • MySQL</p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
 </html>
